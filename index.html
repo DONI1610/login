@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Đăng nhập — Doni</title>
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+<style>
+/* Simple reset */
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at top,#6a11cb,#1b0034);overflow:hidden}
+/* background particles handled in script */
+.container{width:420px;padding:36px;border-radius:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);backdrop-filter:blur(12px);color:#fff;box-shadow:0 10px 30px rgba(0,0,0,0.5);position:relative}
+h2{text-align:center;margin-bottom:12px}
+.input{margin:12px 0}
+.input input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.03);color:#fff}
+.btn{width:100%;padding:12px;border-radius:12px;border:none;background:#cc33ff;color:#fff;font-weight:700;cursor:pointer;margin-top:10px}
+.link{text-align:center;margin-top:12px;color:rgba(255,255,255,0.9)}
+.small{font-size:0.9rem;color:rgba(255,255,255,0.85)}
+.msg{min-height:20px;margin-top:8px;color:#ffd1ff}
+</style>
+</head>
+<body>
+<script>
+// create floating stars
+for(var i=0;i<80;i++){var s=document.createElement('div');s.style.position='absolute';s.style.width=(Math.random()*2+1)+'px';s.style.height=s.style.width;s.style.background='white';s.style.borderRadius='50%';s.style.top=Math.random()*100+'%';s.style.left=Math.random()*100+'%';s.style.opacity=Math.random()*0.9;document.body.appendChild(s);}
+</script>
+
+<div class="container" role="main">
+  <h2>Đăng nhập</h2>
+  <div class="input"><input id="loginEmail" type="email" placeholder="Email" /></div>
+  <div class="input"><input id="loginPass" type="password" placeholder="Mật khẩu" /></div>
+  <button class="btn" onclick="login()">Đăng nhập</button>
+  <div class="msg" id="loginMsg"></div>
+  <p class="link small">Chưa có tài khoản? <a href="register.html">Đăng ký</a></p>
+</div>
+
+<!-- Firebase libs (namespaced) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
